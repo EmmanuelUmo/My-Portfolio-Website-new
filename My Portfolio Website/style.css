@@ -1,0 +1,530 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+background-color: #141414;
+}
+
+.navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #e60e33;
+    color: white;
+    padding: 1em 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.logo{
+    font-size: 1.5em;
+    font-weight: 800;
+}
+
+.navlink{
+    display: flex;
+    list-style-type: none;
+}
+
+.navlink li{
+    margin: 0 1em;
+}
+
+.navlink li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+} 
+
+.navlink a::after {
+    content: ""; /* Creates a pseudo-element */
+    position: absolute; /* Position it absolutely */
+    left: 0; /* Align to left */
+    bottom: 0; /* Align to bottom */
+    height: 3px; /* Height of the underline */
+    width: 100%; /* Full width */
+    background-color: #ff6347; /* Tomato color for the underline */
+    transform: scaleX(0); /* Initially scale to 0 */
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+/* Hover Effects */
+.navlink a:hover::after {
+    transform: scaleX(1); /* Scale to full width on hover */
+}
+
+
+/* Adding Transition */
+.navlink a:hover {
+    color: #ff6347; /* Change link color on hover */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+
+
+.hamburger{
+    display: none;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+
+section{
+    padding: 20px;
+    
+}
+
+.mainsection{
+    padding: 2em;
+    display: flex;
+}
+
+.heroleft{
+    /* background-color: brown; */
+    flex: 1;
+    padding-top: 5em;
+
+}
+
+.heroright{
+    /* background-color: yellow; */
+    flex: 1;
+}
+
+.heroleft h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    color: white;
+}
+
+.heroleft p{
+    font-size: 1.2em;
+    margin-bottom: 1em;
+    color: #cbcbcb;
+}
+
+.hero_btn{
+    display: inline-block;
+    padding: 0.75em 1.5em;
+    background-color: #e60e33;
+    color: #fff;
+    font-size: 1em;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero_btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: left 0.3s ease;
+}
+
+.hero_btn:hover::before {
+    left: 0;
+}
+
+.hero_btn:hover {
+    background-color: #e60e33;
+}
+
+
+.heroright {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heroright img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.about{
+    display: flex;
+    align-items: center;
+    padding: 3em;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: white;
+}
+
+.about_left{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.about_left img{
+    border-radius: 1em;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.about_right{
+    flex: 2;
+    margin-left: 2em;
+}
+
+.about_right h2{
+    font-size: 2em;
+    color: #e60e33;
+    margin-bottom: 0.5em;
+}
+
+.about_right p{
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 1.5em;
+}
+
+.cv_button {
+    display: inline-block;
+    padding: 0.75em 1.5em;
+    background-color: #e60e33;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.cv_button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: left 0.3s ease;
+}
+
+
+.projects {
+    padding: 3em 2em;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.projects h2 {
+    font-size: 2.5em;
+    color: #e60e33;
+    margin-bottom: 1em;
+}
+
+.project-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    justify-content: center;
+}
+
+.project-card {
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 300px;
+    padding: 1.5em;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.project-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 1em;
+}
+
+.project-card h3 {
+    font-size: 1.5em;
+    color: #e60e33;
+    margin-bottom: 0.5em;
+}
+
+.project-card p {
+    font-size: 1em;
+    color: #ccc;
+    margin-bottom: 1em;
+    line-height: 1.5;
+}
+
+.project-link {
+    display: inline-block;
+    padding: 0.5em 1.5em;
+    background-color: #e60e33;
+    color: #fff;
+    font-size: 1em;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.project-link:hover {
+    background-color: #b50a28;
+}
+
+
+
+/* skill styling */
+
+/* skills container styling */
+
+.skills{
+    padding: 3em 2em;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+/*  */
+
+.skills h2{
+    font-size: 2.5em;
+    color: #e60e33;
+    margin-bottom: 1em;
+}
+
+.skills-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
+.skill{
+    text-align: left;
+}
+
+.skill h3{
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+    color: #fff;
+}
+
+.skill-bar{
+    background-color: #333;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 30px;
+}
+
+.progress{
+    background-color: #e60e33;
+    color: #fff;
+    font-size: 1em;
+    height: 100%;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    animation: load 1.5s 
+    ease-in-out forwards;
+}
+
+/* Animation */
+@keyframes load {
+    0% { width: 0; opacity: 0;}
+    100% {opacity: 1;}
+}
+
+/* smooth annimation on hover */
+.progress:hover{
+    background-color: #b50a28;
+    transition: background-color
+     0.3s ease;
+}
+ 
+
+
+/* contact section */
+
+.contact {
+    padding: 3em 2em;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2.5em;
+    color: #e60e33;
+    margin-bottom: 1em;
+}
+
+.contact p {
+    font-size: 1.1em;
+    margin-bottom: 1.5em;
+    line-height: 1.6;
+    color: #f5f5f5;
+}
+
+.contact-details {
+    font-size: 1em;
+    color: #ccc;
+    margin-bottom: 2em;
+}
+
+.contact-details a {
+    color: #e60e33;
+    text-decoration: none;
+}
+
+.contact-form-container {
+    text-align: left;
+    background-color: #1a1a1a;
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 0.5em;
+    color: #e60e33;
+    font-size: 1em;
+}
+
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    padding: 0.8em;
+    margin-bottom: 1em;
+    border: 1px solid #333;
+    border-radius: 4px;
+    background-color: #2a2a2a;
+    color: #fff;
+    font-size: 1em;
+}
+
+.contact-form .submit-btn {
+    width: 100%;
+    padding: 1em;
+    border: none;
+    border-radius: 4px;
+    background-color: #e60e33;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form .submit-btn:hover {
+    background-color: #b50a28;
+}
+
+.social-links {
+    margin-top: 2em;
+}
+
+.social-links a {
+    color: #666;
+    font-size: 1.2em;
+    margin: 0 0.5em;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    
+}
+
+.social-links a:hover {
+    color: #b50a28;
+}
+
+
+
+
+
+
+
+
+
+
+@media(max-width:768px){
+    .navlink{
+        display: none;
+        flex-direction: column;
+        background-color: #c20b2a;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        align-items: center;
+    }
+
+    .navlink li{
+        margin: 1em 0;
+    }
+
+    .navlink.active{
+        max-height: 300px;
+        padding: 1em;
+    }
+    
+
+    .hamburger{
+        display: block;
+    }
+
+    .mainsection{
+        flex-direction: column;
+        padding: 1em;
+    }
+
+    .about{
+        flex-direction: column-reverse;
+        padding: 1em;
+    }
+    .about_right{
+        margin-left: 0;
+        margin-top: 1em;
+        text-align: center;
+    }
+
+    .about_left img{
+        width: 90%;
+    }
+
+    .skills-container{
+        gap: 1em;
+    }
+    .project-gallery{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-card{
+        width: 100%;
+        max-width: 400px;
+    }
+
+}
